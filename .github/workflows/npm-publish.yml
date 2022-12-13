@@ -28,10 +28,19 @@ jobs:
       - name: Install ESlint
         run: npm init @eslint/config
 
+      - name: Install Prettier
+        run: npm install --save-dev --save-exact prettier
+
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
           eslint: true
+          prettier: true
+      - name: Prettify code
+        uses: creyD/prettier_action@v4.2
+        with:
+          # This part is also where you can pass other options, for example:
+          prettier_options: --write **/*.{js,md}
           
   docker:
     needs: run-linters
