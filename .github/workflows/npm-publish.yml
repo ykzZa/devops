@@ -38,6 +38,7 @@ jobs:
           prettier: true
           
   docker:
+    needs: run-linters
     runs-on: ubuntu-latest
     steps:
       -
