@@ -27,6 +27,9 @@ jobs:
         
       - name: Install ESlint
         run: npm init @eslint/config
+        
+      - name: Install Prettier
+        run: npm install --save-dev --save-exact prettier
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
